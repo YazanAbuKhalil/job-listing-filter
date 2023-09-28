@@ -142,6 +142,7 @@ const getFilterdJobs = () => {
 };
 
 const removeSearchKey = (e) => {
+
   const searchKeyParent = e.target.parentElement;
 
   console.log(searchKeyParent);
@@ -154,6 +155,9 @@ const removeSearchKey = (e) => {
   console.log(searchKeys);
 
   searchKeys.splice(searchKeys.indexOf(deletedKey), 1);
+
+  (searchKeys.length === 0) ?  searchHistoryContainer.innerHTML = "" : null;
+    
 
   const filteredJob = getFilterdJobs();
   renderJobList(filteredJob);
@@ -168,7 +172,6 @@ const clearAllKeys = () => {
 }
 
 const displaySearchHistory = () => {
-  if (searchKeys.length === 0) return;
 
   searchHistoryContainer.innerHTML = "";
 
