@@ -130,9 +130,20 @@ main {
 
 }
 
+
 .key-container {
   display: flex;
   padding: 15px;
+}
+
+.clear {
+  margin-left: auto;
+  cursor: pointer;
+
+}
+
+.clear:hover {
+  text-decoration:underline;
 }
 
 .search-key {
@@ -156,9 +167,6 @@ main {
     flex-wrap: wrap;
   } 
 
-  .job-container:first-child {
-    margin-top: 80PX;
-  }
 
   .job-description {
     display: block;
@@ -173,6 +181,20 @@ main {
 
   .search-bar  {
     height: 30PX;
+  }
+
+  #searchInput {
+    font-size: 13px;
+  }
+
+  .role-and-tools {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  
+  .search-history-container {
+    margin-top: 20px;
   }
 
 .role,

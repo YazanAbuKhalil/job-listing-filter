@@ -160,6 +160,13 @@ const removeSearchKey = (e) => {
   console.log(searchKeys);
 };
 
+const clearAllKeys = () => {
+  searchKeys.length = 0;
+  searchHistoryContainer.innerHTML = "";
+  const filteredJobs = getFilterdJobs();
+  renderJobList(filteredJobs)
+}
+
 const displaySearchHistory = () => {
   if (searchKeys.length === 0) return;
 
@@ -180,7 +187,16 @@ const displaySearchHistory = () => {
     cencel.textContent = "X";
     keyContainer.appendChild(cencel);
     cencel.addEventListener("click", removeSearchKey);
+
+
   });
+
+
+  const clear = document.createElement("span");
+  clear.classList.add("clear");
+  clear.textContent = "Clear";
+  searchHistoryContainer.appendChild(clear);
+  clear.addEventListener("click", clearAllKeys)
 };
 
 const handleSearch = (e) => {
