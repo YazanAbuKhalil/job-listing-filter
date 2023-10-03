@@ -142,37 +142,26 @@ const getFilterdJobs = () => {
 };
 
 const removeSearchKey = (e) => {
-
   const searchKeyParent = e.target.parentElement;
-
-  console.log(searchKeyParent);
   searchKeyParent.style.display = "none";
-  console.log("key paren container: ", "none");
-
   const deletedKey = searchKeyParent.querySelector(".search-key").textContent;
-  console.log("deleted key: ", deletedKey);
 
-  console.log(searchKeys);
 
   searchKeys.splice(searchKeys.indexOf(deletedKey), 1);
-
-  (searchKeys.length === 0) ?  searchHistoryContainer.innerHTML = "" : null;
-    
+  searchKeys.length === 0 ? (searchHistoryContainer.innerHTML = "") : null;
 
   const filteredJob = getFilterdJobs();
   renderJobList(filteredJob);
-  console.log(searchKeys);
 };
 
 const clearAllKeys = () => {
   searchKeys.length = 0;
   searchHistoryContainer.innerHTML = "";
   const filteredJobs = getFilterdJobs();
-  renderJobList(filteredJobs)
-}
+  renderJobList(filteredJobs);
+};
 
 const displaySearchHistory = () => {
-
   searchHistoryContainer.innerHTML = "";
 
   searchKeys.forEach((key) => {
@@ -190,16 +179,13 @@ const displaySearchHistory = () => {
     cencel.textContent = "X";
     keyContainer.appendChild(cencel);
     cencel.addEventListener("click", removeSearchKey);
-
-
   });
-
 
   const clear = document.createElement("span");
   clear.classList.add("clear");
   clear.textContent = "Clear";
   searchHistoryContainer.appendChild(clear);
-  clear.addEventListener("click", clearAllKeys)
+  clear.addEventListener("click", clearAllKeys);
 };
 
 const handleSearch = (e) => {

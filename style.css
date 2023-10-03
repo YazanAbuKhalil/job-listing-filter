@@ -161,7 +161,7 @@ main {
   text-align: center;
   color: red;
 }
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .job-container {
     width: 90%;
     flex-wrap: wrap;
